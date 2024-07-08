@@ -17,6 +17,11 @@ let flashCards = [
   { question: "What does the syntax of the constructor look like?", answer: "constructor( value ){\nthis.value = value;\n}" },
   { question: "What is the sytnax of the constructor if the class is extended from another class?", answer: "constructor( value ){\nsuper( value );\n}" },
   { question: "How do you enable strict mode on JavaScript documents to enable better error tracking?", answer: "add 'use strict' to the first line\nof the document" },
+  { question: "Where should 'use strict' be enabled", answer: "add 'use strict' to the first line\nof the document" },
+  { question: "What is a variable?", answer: "A variable is a “named storage”\nfor data." },
+  { question: "How do you initiate a prompt?", answer: "result = prompt('title', 'default input');" },
+  { question: "How do you initiate a confirm?", answer: "result = confirm(question);" },
+  { question: "How do you increment prefix and postfix?", answer: "prefix: ++a\npostfix: b++" },
 ];
 ---
 
@@ -25,10 +30,16 @@ let flashCards = [
   description="Lorem ipsum dolor sit amet"
   pubDate={new Date("June 06 2024")}
 >
+  <p>Resources:</p>
+  <ul>
+    <li><a href="https://javascript.info/" target="_blank">javascript.info</a></li>
+    <li><a href="https://exploringjs.com/impatient-js/downloads/impatient-js-preview-book.pdf" target="_blank">JavaScript
+      For Impatient Programmers</a></li>
+  </ul>
   <p>Click on a card to reveal the answer.</p>
   <div class="flash-cards gap-4 flex flex-wrap">
     {
-      flashCards.map((card) => (
+      flashCards.sort(() => Math.random() - 0.5).map((card) => (
         <div class="card">
           <p class="card-face front">{card.question}</p>
           <pre class="card-face back">{card.answer}</pre>
